@@ -1,7 +1,6 @@
 <template>
   <div>
-    labels
-    <Nav />
+    <Content>label</Content>
   </div>
 </template>
 
