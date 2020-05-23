@@ -8,12 +8,10 @@
 
 <script lang="ts">
 import Vue from "vue";
-
+import x from "@/assets/icons/label.svg";
 export default Vue.extend({});
+console.log(x);
 </script >
 
 <style lang="scss" scoped>
-*.nav {
-  pborder: 1px solid red;
-}
 </style>
