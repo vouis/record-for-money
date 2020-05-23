@@ -16,14 +16,14 @@ module.exports = {
       .use("svg-sprite-loader")    //选择使用的loader
       .loader("svg-sprite-loader")  //确定使用这个loader
       .options({ extract: false })   // 添加选项
+      .end()
+      .use("svgo-loader")
+      .loader("svgo-loader")
+      .tap(options => ({
+        ...options,
+        plugins: [{ removeAttrs: { attrs: "fill" } }]
+      }))
       .end();
-    // .use("svgo-loader")
-    // .loader("svgo-loader")
-    // .tap(options => ({
-    //   ...options,
-    //   plugins: [{ removeAttrs: { attrs: "fill" } }]
-    // }))
-    // .end();
     config
       .plugin("svg-sprite")
       .use(require("svg-sprite-loader/plugin"), [{ plainSprite: true }]);
